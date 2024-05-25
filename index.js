@@ -11,8 +11,8 @@ const port = 3000;
 const secret = []
 
 app.get('/', async (req, res) => {
-    const filePath = req.body.fileName;
-    const password = req.body.password;
+    const filePath = req.query.fileName;
+    const password = req.query.password;
 
     const findFile = secret.find((file) => file.fileName === filePath && file.password === password)
     if (!findFile) {
